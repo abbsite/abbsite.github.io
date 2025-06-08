@@ -1,19 +1,20 @@
 <template>
-    <div class="ui container free">
-        <div ref="jarallaxRef" class="ui basic vertical fitted segment jarallax mceNonEditable min-h-[70vh]"
-            :style="`background-image:url(${url})`">
-            <div class="ui active light dimmer">
-                <div class="content"><a class="ui header hvr-icon-wobble-vertical massive inverted icon"
-                        style="font-family: Arsenal, sans-serif;"><i class="hvr-icon !h-28 icon mx-auto"
-                            :class="page.i"></i><span class="ui">{{ page.title }}<span class="sub header">{{ page.description
-                            }}</span></span></a></div>
-            </div>
+    <div ref="jarallaxRef" class="ui basic vertical fitted segment jarallax mceNonEditable min-h-[70vh]"
+        :style="`background-image:url(${url})`">
+        <div class="ui active light dimmer">
+            <div class="content"><a class="ui header hvr-icon-wobble-vertical massive inverted icon"
+                    style="font-family: Arsenal, sans-serif;"><i class="hvr-icon !h-28 icon mx-auto"
+                        :class="page.i"></i><span class="ui">{{ page.title }}<span class="sub header">{{
+                            page.description
+                        }}</span></span></a></div>
         </div>
     </div>
     <p>&nbsp;</p>
     <div class="ui container">
         <div class="ui three column centered stretched padded grid mceNonEditable stackable doubling">
-            <div v-for="(child,i) in page.$children" class="column animate__animated" :class="{ animate__flipInY: flip[i], animate__flipOutY: !flip[i], }" v-intersection-observer="[([{ isIntersecting }]) => { flip[i] = isIntersecting }, { threshold: 0.3 }]">
+            <div v-for="(child, i) in page.$children" class="column animate__animated"
+                :class="{ animate__flipInY: animate[i], animate__flipOutY: !animate[i], }"
+                v-intersection-observer="[([{ isIntersecting }]) => { animate[i] = isIntersecting }, { threshold: 0.3 }]">
                 <div class="ui fluid raised link card">
                     <div class="ui image" ref="cards">
                         <div class="ui inverted dimmer"><router-link :to="child.to"
@@ -32,8 +33,8 @@
 </template>
 
 <script setup>
-import { useScriptTag, tryOnMounted } from "@vueuse/core";
-import { inject, onMounted, useTemplateRef, ref } from "vue";
+import { useScriptTag } from "@vueuse/core";
+import { inject, onMounted, useTemplateRef, ref, onUnmounted } from "vue";
 import { jarallax } from "jarallax";
 import { vIntersectionObserver } from "@vueuse/components";
 
@@ -42,20 +43,22 @@ const { id } = defineProps(["id"]),
     [{ url }] = page.images,
     jarallaxRef = useTemplateRef("jarallaxRef"),
     cardRefs = useTemplateRef("cards"),
-    flip = ref([]);
+    animate = ref([]),
+    { load: loadJQuery, unload: unloadJQuery } = useScriptTag("./node_modules/jquery/dist/jquery.min.js", () => { }, { manual: true }),
+    { load: loadFomantic, unload: unloadFomantic } = useScriptTag("./node_modules/fomantic-ui-css/semantic.min.js", () => { }, { manual: true });
 
-useScriptTag("./node_modules/jquery/dist/jquery.min.js", () => {
-    useScriptTag("./node_modules/fomantic-ui-css/semantic.min.js", () => {
-        tryOnMounted(() => {
-            $(cardRefs.value).dimmer({
-                transition: "fade up",
-                on: "hover",
-            });
-        });
-    })
+onMounted(async () => {
+    jarallax(jarallaxRef.value, {});
+    await loadJQuery();
+    await loadFomantic();
+    $(cardRefs.value).dimmer({
+        transition: "fade up",
+        on: "hover",
+    });
 });
 
-onMounted(() => {
-    jarallax(jarallaxRef.value, {});
+onUnmounted(async () => {
+    await unloadFomantic();
+    await unloadJQuery();
 });
 </script>

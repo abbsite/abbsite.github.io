@@ -108,7 +108,7 @@ onMounted(() => {
 watch(() => route.name, () => { drawer.value = false });
 </script>
 <style>
-@import "./node_modules/animate.css/animate.min.css"; 
+@import "./node_modules/animate.css/animate.min.css";
 @import "./node_modules/hover.css/css/hover-min.css";
 @import "./node_modules/element-plus/dist/index.css";
 @import "./node_modules/fomantic-ui-css/semantic.min.css";
@@ -127,13 +127,40 @@ watch(() => route.name, () => { drawer.value = false });
     height: 2rem;
 }
 
-.ui.free.container {
-    width: 100vw !important;
-    max-width: none;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
+A {
+    color: OrangeRed;
+}
+
+#content {
+    font-family: 'Arsenal', sans-serif;
+    font-size: 16px;
+}
+
+#bottom {
+    font-family: 'Arsenal', sans-serif;
+}
+
+#top {
+    font-family: 'Arsenal', sans-serif;
+}
+
+H1 {
+    font-family: 'Arsenal', sans-serif;
+}
+
+H2 {
+    font-family: 'Arsenal', sans-serif;
+}
+
+H3 {
+    font-family: 'Arsenal', sans-serif;
+}
+
+H4 {
+    font-family: 'Arsenal', sans-serif;
+}
+
+H5 {
+    font-family: 'Arsenal', sans-serif;
 }
 </style>
