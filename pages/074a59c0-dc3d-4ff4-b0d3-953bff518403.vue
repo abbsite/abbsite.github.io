@@ -5,7 +5,7 @@
             <el-page-header icon="" :content="pages[$route.name].title">
                 <template #breadcrumb>
                     <el-breadcrumb separator="/">
-                        <el-breadcrumb-item v-for="item in pages[$route.name].branch" :to="item.to">
+                        <el-breadcrumb-item v-for="item in pages[$route.name].branch.slice(1)" :to="item.to">
                             {{ item.name }}
                         </el-breadcrumb-item>
                     </el-breadcrumb>
@@ -60,15 +60,20 @@
     </div>
     <div id="drawer" un-cloak>
         <el-drawer v-model="drawer" :title="the.header" class="w-full sm:w-96" size="">
-            <el-menu :router="true" :default-openeds="[0, 1, 2]">
-                <el-sub-menu v-for="({ name, $children, icon }, index) in views" :index="index">
-                    <template #title>
+            <el-menu :router="true">
+                <template v-for="({ name, $children, icon, id }, index) in the.$children[0].$children">
+                    <el-sub-menu :index="index" v-if="$children.length">
+                        <template #title>
+                            <icon :icon="icon" class="icon-box"></icon><span>{{ name }}</span>
+                        </template>
+                        <el-menu-item v-for="(child, index2) in $children" :route="{ name: child.id }" :index="index2">
+                            <icon :icon="child.icon" class="icon-box"></icon><span>{{ child.name }}</span>
+                        </el-menu-item>
+                    </el-sub-menu>
+                    <el-menu-item :index="index" :route="{ name: id }" v-else>
                         <icon :icon="icon" class="icon-box"></icon><span>{{ name }}</span>
-                    </template>
-                    <el-menu-item v-for="(child, index2) in $children" :route="{ name: child.id }" :index="index2">
-                        <icon :icon="child.icon" class="icon-box"></icon><span>{{ child.name }}</span>
                     </el-menu-item>
-                </el-sub-menu>
+                </template>
             </el-menu>
         </el-drawer>
     </div>
