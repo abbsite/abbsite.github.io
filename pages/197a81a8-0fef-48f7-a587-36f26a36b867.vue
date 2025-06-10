@@ -3,7 +3,7 @@
     <div class="ui horizontal centered stackable basic segments">
         <div class="ui segment" v-for="({url, alt}, index) in page.images">
             <figure class="ui rounded medium centered image">
-            <el-image :src="url" :preview-src-list="srcList" :initial-index="index" fit="cover"></el-image>
+            <el-image :src="url" :preview-src-list="srcList" :initial-index="index" fit="cover" :alt="alt"></el-image>
             <figcaption class="content" style="text-align: center;">{{ alt }}</figcaption>
             </figure>
         </div>
