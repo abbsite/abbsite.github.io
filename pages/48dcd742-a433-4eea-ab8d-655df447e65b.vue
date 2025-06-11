@@ -6,7 +6,7 @@
                     style="font-family: Arsenal, sans-serif;"><i class="hvr-icon !h-28 icon mx-auto"
                         :class="page.i"></i><span class="ui">{{ page.title }}<span class="sub header">{{
                             page.description
-                        }}</span></span></a></div>
+                            }}</span></span></a></div>
         </div>
     </div>
     <p>&nbsp;</p>
@@ -14,7 +14,7 @@
         <div class="ui three column centered stretched padded grid mceNonEditable stackable doubling">
             <div v-for="(child, i) in page.$children" class="column animate__animated"
                 :class="{ animate__flipInY: animate[i], animate__flipOutY: !animate[i], }"
-                v-intersection-observer="[([{ isIntersecting }]) => { animate[i] = isIntersecting }, { threshold: 0.3 }]">
+                v-intersection-observer="([{ isIntersecting }]) => { animate[i] = isIntersecting }">
                 <div class="ui fluid raised link card">
                     <div class="ui image" ref="cards">
                         <div class="ui inverted dimmer"><router-link :to="child.to"
