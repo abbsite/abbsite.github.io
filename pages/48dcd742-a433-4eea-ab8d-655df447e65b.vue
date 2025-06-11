@@ -13,7 +13,7 @@
     <div class="ui container">
         <div class="ui three column centered stretched padded grid mceNonEditable stackable doubling">
             <div v-for="(child, i) in page.$children" class="column animate__animated"
-                :class="{ animate__flipInY: animate[i], animate__flipOutY: !animate[i], }"
+                :class="{ animate__flipInY: animate[i], invisible: !animate[i], }"
                 v-intersection-observer="([{ isIntersecting }]) => { animate[i] = isIntersecting }">
                 <div class="ui fluid raised link card">
                     <div class="ui image" ref="cards">
