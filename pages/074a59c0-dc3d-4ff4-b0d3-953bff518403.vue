@@ -12,7 +12,7 @@
                 </template>
                 <template #title>
                     <router-link to="/" class="whitespace-nowrap flex items-center max-sm:hidden">
-                        <el-avatar :icon="UserFilled" size="small"></el-avatar>
+                        <el-avatar size="small"><i :class="the.i"></i></el-avatar>
                     </router-link>
                 </template>
                 <template #extra>
@@ -81,11 +81,11 @@
 </template>
 <script setup>
 import { useRoute } from "vue-router";
-import { computed, ref, inject, useTemplateRef, onMounted, watch, getCurrentInstance } from "vue";
+import { ref, inject, useTemplateRef, onMounted, watch, getCurrentInstance } from "vue";
 import { get, set } from "@vueuse/core";
 import ElementPlus from "element-plus";
 import { Icon } from "@iconify/vue";
-import { UserFilled } from "@element-plus/icons-vue";
+
 
 const { appContext: { app } } = getCurrentInstance();
 app.component("Icon", Icon);
@@ -93,7 +93,6 @@ app.use(ElementPlus);
 const { id } = defineProps(["id"]),
     pages = inject("pages"),
     the = pages[id],
-    views = computed(() => the.$children.filter(({ $children }) => $children.length)),
     ready = ref(true),
     pageHeaderRef = useTemplateRef("pageHeader"),
     drawer = ref(false),
