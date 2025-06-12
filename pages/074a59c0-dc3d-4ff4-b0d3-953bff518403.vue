@@ -24,38 +24,35 @@
         </div>
         <router-view></router-view>
     </div>
-    <div data-static="" class="pt-10">
-        <div id="bottom"
-            style="margin: 0px; flex: 1 1 auto; padding-top: 30px; padding-bottom: 5px; border-style: none; opacity: 1; background-color: rgb(94, 94, 94); background-position: 0% 0%; background-repeat: repeat; background-attachment: scroll; background-size: auto;">
-            <div class="ui container">
-                <div class="ui horizontal basic segments">
-                    <div class="ui segment" style="width: 50%; background-color: rgb(94, 94, 94);">
-                        <p><i class="envelope large icon" style="color: lightskyblue;"></i></p>
-                        <p style="color: rgb(220, 220, 220);">Вопросы об использовании или приобретении материалов, Ваши
-                            предложения, отзывы, а также другие вопросы присылайте мне на почту:<br><a
-                                href="mailto:abb44@mail.ru"
-                                style="text-decoration: none; color: lightskyblue;">abb44@mail.ru</a><br><br>Согласие на
-                            обработку данных не требуется, я ничего не обрабатываю.</p>
-                    </div>
-                    <div class="ui segment" style="width: 50%; background-color: rgb(94, 94, 94);">
-                        <p><i class="info circle large icon" style="color: lightskyblue;"></i></p>
-                        <p style="color: rgb(220, 220, 220);">© Все права защищены. Копирование материала возможно
-                            только с
-                            моего согласия. Использование любой медицинской информации в личных целях требует
-                            дополнительной
-                            консультации врача. Все данные, опубликованные на сайте приведены исключительно для
-                            ознакомления, носят информационный характер и не являются публичной офертой, определяемой
-                            положениями ч. 2 ст. 437 Гражданского кодекса РФ.</p>
-                    </div>
+    <div class="mt-10 bg-[#5e5e5e]">
+        <div class="ui container pt-7 pb-1">
+            <div class="ui horizontal basic segments">
+                <div class="ui segment" style="width: 50%; background-color: rgb(94, 94, 94);">
+                    <p><i class="envelope large icon" style="color: lightskyblue;"></i></p>
+                    <p style="color: rgb(220, 220, 220);">Вопросы об использовании или приобретении материалов, Ваши
+                        предложения, отзывы, а также другие вопросы присылайте мне на почту:<br><a
+                            href="mailto:abb44@mail.ru"
+                            style="text-decoration: none; color: lightskyblue;">abb44@mail.ru</a><br><br>Согласие на
+                        обработку данных не требуется, я ничего не обрабатываю.</p>
                 </div>
-                <p>&nbsp;</p>
-                <p style="font-size: 10pt; text-align: center; color: rgb(220, 220, 220); padding-bottom: 5px;"><a
-                        class="hvr-wobble-skew" title="KosmoS3 удобный и гибкий инструмент для управления сайтом на S3"
-                        href="https://kosmos3.ru/" target="_blank" rel="noopener"
-                        style="color: rgb(220, 220, 220); font-family: Arsenal, sans-serif; font-size: 12px;">KosmoS3 <i
-                            class="hvr-icon icon rocket"></i>удобный и гибкий инструмент для управления сайтом на S3</a>
-                </p>
+                <div class="ui segment" style="width: 50%; background-color: rgb(94, 94, 94);">
+                    <p><i class="info circle large icon" style="color: lightskyblue;"></i></p>
+                    <p style="color: rgb(220, 220, 220);">© Все права защищены. Копирование материала возможно
+                        только с
+                        моего согласия. Использование любой медицинской информации в личных целях требует
+                        дополнительной
+                        консультации врача. Все данные, опубликованные на сайте приведены исключительно для
+                        ознакомления, носят информационный характер и не являются публичной офертой, определяемой
+                        положениями ч. 2 ст. 437 Гражданского кодекса РФ.</p>
+                </div>
             </div>
+            <p>&nbsp;</p>
+            <p style="font-size: 10pt; text-align: center; color: rgb(220, 220, 220); padding-bottom: 5px;"><a
+                    class="hvr-wobble-skew" title="KosmoS3 удобный и гибкий инструмент для управления сайтом на S3"
+                    href="https://kosmos3.ru/" target="_blank" rel="noopener"
+                    style="color: rgb(220, 220, 220); font-family: Arsenal, sans-serif; font-size: 12px;">KosmoS3 <i
+                        class="hvr-icon icon rocket"></i>удобный и гибкий инструмент для управления сайтом на S3</a>
+            </p>
         </div>
     </div>
     <div id="drawer" un-cloak>
