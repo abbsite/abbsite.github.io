@@ -24,8 +24,8 @@
         </div>
         <router-view></router-view>
     </div>
-    <div data-static="" class="ui fluid container pt-10" style="z-index: 2;">
-        <div id="bottom" class=""
+    <div data-static="" class="pt-10">
+        <div id="bottom"
             style="margin: 0px; flex: 1 1 auto; padding-top: 30px; padding-bottom: 5px; border-style: none; opacity: 1; background-color: rgb(94, 94, 94); background-position: 0% 0%; background-repeat: repeat; background-attachment: scroll; background-size: auto;">
             <div class="ui container">
                 <div class="ui horizontal basic segments">
