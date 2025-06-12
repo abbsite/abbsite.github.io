@@ -22,9 +22,9 @@
                 </template>
             </el-page-header>
         </div>
-        <router-view></router-view>
+        <div id="content"><router-view></router-view></div>
     </div>
-    <div class="mt-10 bg-[#5e5e5e]">
+    <div class="mt-10 bg-[#5e5e5e]" id="bottom" un-cloak>
         <div class="ui container pt-7 pb-1">
             <div class="ui horizontal basic segments">
                 <div class="ui segment" style="width: 50%; background-color: rgb(94, 94, 94);">
@@ -138,10 +138,6 @@ A {
 }
 
 #bottom {
-    font-family: 'Arsenal', sans-serif;
-}
-
-#top {
     font-family: 'Arsenal', sans-serif;
 }
 
