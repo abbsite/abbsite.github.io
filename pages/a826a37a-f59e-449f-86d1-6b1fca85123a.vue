@@ -660,7 +660,7 @@
 import { inject, useTemplateRef, onMounted } from "vue";
 import { jarallax } from "jarallax";
 
-const { id } = defineProps(["id"]),
+const { pid: id } = defineProps(["pid"]),
     page = inject("pages")[id],
     [{ url }] = page.images,
     jarallaxRef = useTemplateRef("jarallaxRef");

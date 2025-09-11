@@ -14,7 +14,7 @@
 <script setup>
 import { inject } from "vue";
 
-const { id } = defineProps(["id"]),
+const { pid: id } = defineProps(["pid"]),
     page = inject("pages")[id],
     srcList = page.images.map(({ url }) => url);
 </script>

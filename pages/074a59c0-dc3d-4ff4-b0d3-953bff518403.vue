@@ -87,7 +87,7 @@ import { Icon } from "@iconify/vue";
 const { appContext: { app } } = getCurrentInstance();
 app.component("Icon", Icon);
 app.use(ElementPlus);
-const { id } = defineProps(["id"]),
+const { pid: id } = defineProps(["pid"]),
     pages = inject("pages"),
     the = pages[id],
     ready = ref(true),
