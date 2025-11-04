@@ -321,7 +321,7 @@
 <script setup>
 import { inject } from "vue";
 
-const { pid: id } = defineProps(["pid"]),
+const { id } = defineProps(["id"]),
     page = inject("pages")[id],
     [{ url }] = page.images;
 

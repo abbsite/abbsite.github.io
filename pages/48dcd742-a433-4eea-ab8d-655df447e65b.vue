@@ -38,7 +38,7 @@ import { inject, onMounted, useTemplateRef, ref, onUnmounted } from "vue";
 import { jarallax } from "jarallax";
 import { vIntersectionObserver } from "@vueuse/components";
 
-const { pid: id } = defineProps(["pid"]),
+const { id } = defineProps(["id"]),
     page = inject("pages")[id],
     [{ url }] = page.images,
     jarallaxRef = useTemplateRef("jarallaxRef"),
